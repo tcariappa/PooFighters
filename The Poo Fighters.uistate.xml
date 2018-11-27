@@ -10,11 +10,13 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
-        <layout active="1" order="0">Map</layout>
+        <layout order="0">Map</layout>
         <layout order="3">Controller Screen</layout>
-        <event-sheet order="1">MainGame</event-sheet>
+        <layout order="5">Title</layout>
+        <event-sheet active="1" order="1">MainGame</event-sheet>
         <event-sheet order="2">Functions</event-sheet>
         <event-sheet order="4">Controller Screen</event-sheet>
+        <event-sheet order="6">Title_Screen</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -59,5 +61,8 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/Light/" />
         <folder expanded="1" path="animation-folder/Camera/" />
         <folder expanded="1" path="animation-folder/CP1/" />
+        <folder expanded="1" path="animation-folder/Lightning/" />
+        <folder expanded="1" path="animation-folder/Logo/" />
+        <folder expanded="1" path="animation-folder/Portal_Remain/" />
     </folders-expanded>
 </c2uistate>

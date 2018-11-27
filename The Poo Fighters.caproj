@@ -10,10 +10,13 @@
     <unique-id>3phjf8c2bcezm</unique-id>
     <saved-with-version>26500</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="Arr" version="1">Array</plugin>
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Particles" version="1">Particles</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Spritefont2" version="1">Sprite font</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
         <plugin author="Scirra" id="gamepad" version="1">Gamepad</plugin>
@@ -36,6 +39,8 @@
         <effect author="Scirra" id="glowhorizontal">Glow Horizontal</effect>
         <effect author="Scirra" id="glowvertical">Glow Vertical</effect>
         <effect author="Scirra" id="hsladjust">Adjust HSL</effect>
+        <effect author="Scirra" id="inverse">Inverse</effect>
+        <effect author="Scirra" id="lumblend">Luminosity</effect>
         <effect author="Scirra" id="multiply">Multiply</effect>
         <effect author="Scirra" id="overlay">Overlay</effect>
         <effect author="Danguafer/Silexars" id="pulse">Pulse</effect>
@@ -52,7 +57,7 @@
     </window-size>
     <pixel-rounding>1</pixel-rounding>
     <preview-effects>1</preview-effects>
-    <first-layout>Map</first-layout>
+    <first-layout>Title</first-layout>
     <use-loader-layout>0</use-loader-layout>
     <configuration-settings>
         <prop name="Clear background">Yes</prop>
@@ -623,6 +628,11 @@
             </object-type>
             <object-type name="CloudsBackground" sid="697727089340514">
                 <plugin id="TiledBg" />
+                <behaviors>
+                    <behavior-type name="Sine" sid="652515139860979">
+                        <behavior id="Sin" />
+                    </behavior-type>
+                </behaviors>
                 <texture original-source="C:\Users\Pulkitoki Sakata\Documents\Assignments and Stuff\Year_04\Semester_05\Pixel_Art_MC\Assets\ENV\Clouds.png" />
             </object-type>
         </object-folder>
@@ -730,6 +740,10 @@
                     </animation>
                 </animation-folder>
             </object-type>
+            <object-type name="Rain" sid="911483969263878">
+                <plugin id="Particles" />
+                <texture />
+            </object-type>
         </object-folder>
         <object-type name="Keyboard" sid="775989369597869">
             <plugin id="Keyboard" />
@@ -801,10 +815,86 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type global="1" name="Array" sid="128207089063322">
+            <plugin id="Arr" />
+        </object-type>
+        <object-type name="Lightning" sid="380767997642570">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="5" loop="0" name="Flash" pingpong="0" repeatcount="1" repeatto="0" sid="629205286230146" speed="14">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="0" name="No" pingpong="0" repeatcount="1" repeatto="0" sid="682309568839099" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="SpriteFont" sid="407836814574919">
+            <plugin id="Spritefont2" />
+            <behaviors>
+                <behavior-type name="Sine" sid="465781784844868">
+                    <behavior id="Sin" />
+                </behavior-type>
+            </behaviors>
+            <effects>
+                <effect-type name="GlowVertical">
+                    <effect id="glowvertical" />
+                </effect-type>
+                <effect-type name="Inverse">
+                    <effect id="inverse" />
+                </effect-type>
+            </effects>
+            <texture />
+        </object-type>
+        <object-type name="Logo" sid="652159586580390">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Sine" sid="462603225104716">
+                    <behavior id="Sin" />
+                </behavior-type>
+            </behaviors>
+            <effects>
+                <effect-type name="AdjustHSL">
+                    <effect id="hsladjust" />
+                </effect-type>
+            </effects>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="266174144904635" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Pulkitoki Sakata\Documents\Assignments and Stuff\Year_04\Semester_05\Pixel_Art_MC\Assets\Game_Logo.png">
+                        <collision-poly>
+                            <point x="0.0625" y="0.0625" />
+                            <point x="0.5" y="0" />
+                            <point x="0.9375" y="0.0625" />
+                            <point x="1" y="0.5" />
+                            <point x="0.864583" y="0.864583" />
+                            <point x="0.5" y="1" />
+                            <point x="0.145833" y="0.854167" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Mouse" sid="548272077652599">
+            <plugin id="Mouse" />
+        </object-type>
+        <object-type name="Portal_Remain" sid="778074223752555">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="296452281612783" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
         <layout>Map.xml</layout>
+        <layout>Title.xml</layout>
         <layout>Controller Screen.xml</layout>
         <layout>Unused.xml</layout>
     </layout-folder>
@@ -812,6 +902,7 @@
         <event-sheet>MainGame.xml</event-sheet>
         <event-sheet>Controller Screen.xml</event-sheet>
         <event-sheet>Functions.xml</event-sheet>
+        <event-sheet>Title_Screen.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" uid="20" />
@@ -821,6 +912,7 @@
             </properties>
         </global-instance>
         <global-instance type="Function" uid="37" />
+        <global-instance type="Mouse" uid="82" />
     </global-instances>
     <sounds-folder />
     <music-folder />
