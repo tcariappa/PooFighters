@@ -80,7 +80,7 @@
                             <param id="1" name="Button">0</param>
                         </condition>
                         <condition id="2" name="Key is down" sid="230980459865351" type="Keyboard">
-                            <param id="0" name="Key">17</param>
+                            <param id="0" name="Key">38</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -195,7 +195,7 @@
                             <param id="1" name="Button">0</param>
                         </condition>
                         <condition id="2" name="Key is down" sid="798857898043868" type="Keyboard">
-                            <param id="0" name="Key">32</param>
+                            <param id="0" name="Key">87</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -256,37 +256,47 @@
         </event-group>
         <event-group description="" sid="993086666846443" title="ShootingPlayer1">
             <sub-events>
-                <event-block sid="406077161747735">
+                <event-block any="1" sid="406077161747735">
                     <conditions>
                         <condition id="3" name="Is button down" sid="175914661401281" type="Gamepad">
                             <param id="0" name="Gamepad">0</param>
                             <param id="1" name="Button">7</param>
                         </condition>
-                        <condition id="-14" name="Compare variable" sid="631121306875239" type="System">
-                            <param id="0" name="Variable">ShootCooldown</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">0</param>
+                        <condition id="2" name="Key is down" sid="721560088986047" type="Keyboard">
+                            <param id="0" name="Key">45</param>
                         </condition>
                     </conditions>
-                    <actions>
-                        <action id="0" name="Spawn another object" sid="805378982815644" type="Player1">
-                            <param id="0" name="Object">BulletPlayer1</param>
-                            <param id="1" name="Layer">4</param>
-                            <param id="2" name="Image point">1</param>
-                        </action>
-                        <action id="4" name="Set animation" sid="580641894872192" type="Player1">
-                            <param id="0" name="Animation">&quot;Shoot&quot;</param>
-                            <param id="1" name="From">1</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="207044889832941" type="System">
-                            <param id="0" name="Variable">ShootCooldown</param>
-                            <param id="1" name="Value">1</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="744402028238236" type="System">
-                            <param id="0" name="Variable">inCooldown</param>
-                            <param id="1" name="Value">1</param>
-                        </action>
-                    </actions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="882366494627659">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="631121306875239" type="System">
+                                    <param id="0" name="Variable">ShootCooldown</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="805378982815644" type="Player1">
+                                    <param id="0" name="Object">BulletPlayer1</param>
+                                    <param id="1" name="Layer">4</param>
+                                    <param id="2" name="Image point">1</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="580641894872192" type="Player1">
+                                    <param id="0" name="Animation">&quot;Shoot&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="207044889832941" type="System">
+                                    <param id="0" name="Variable">ShootCooldown</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="744402028238236" type="System">
+                                    <param id="0" name="Variable">inCooldown</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block sid="276870354426524">
                     <conditions>
@@ -350,37 +360,47 @@
         </event-group>
         <event-group description="" sid="872641600976842" title="ShootingPlayer2">
             <sub-events>
-                <event-block sid="169960935706710">
+                <event-block any="1" sid="169960935706710">
                     <conditions>
                         <condition id="3" name="Is button down" sid="140888695595956" type="Gamepad">
                             <param id="0" name="Gamepad">1</param>
                             <param id="1" name="Button">7</param>
                         </condition>
-                        <condition id="-14" name="Compare variable" sid="145618824432050" type="System">
-                            <param id="0" name="Variable">ShootCooldown2</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">0</param>
+                        <condition id="2" name="Key is down" sid="289523873488186" type="Keyboard">
+                            <param id="0" name="Key">32</param>
                         </condition>
                     </conditions>
-                    <actions>
-                        <action id="0" name="Spawn another object" sid="182568680618205" type="Player2">
-                            <param id="0" name="Object">BulletPlayer2</param>
-                            <param id="1" name="Layer">4</param>
-                            <param id="2" name="Image point">1</param>
-                        </action>
-                        <action id="4" name="Set animation" sid="810665645370942" type="Player2">
-                            <param id="0" name="Animation">&quot;Shoot&quot;</param>
-                            <param id="1" name="From">1</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="187523079841181" type="System">
-                            <param id="0" name="Variable">ShootCooldown2</param>
-                            <param id="1" name="Value">1</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="109613476998960" type="System">
-                            <param id="0" name="Variable">inCooldown2</param>
-                            <param id="1" name="Value">1</param>
-                        </action>
-                    </actions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="472155054321339">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="145618824432050" type="System">
+                                    <param id="0" name="Variable">ShootCooldown2</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="182568680618205" type="Player2">
+                                    <param id="0" name="Object">BulletPlayer2</param>
+                                    <param id="1" name="Layer">4</param>
+                                    <param id="2" name="Image point">1</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="810665645370942" type="Player2">
+                                    <param id="0" name="Animation">&quot;Shoot&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="187523079841181" type="System">
+                                    <param id="0" name="Variable">ShootCooldown2</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="109613476998960" type="System">
+                                    <param id="0" name="Variable">inCooldown2</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block sid="104090518931383">
                     <conditions>
@@ -678,6 +698,11 @@
             </conditions>
             <actions>
                 <action id="0" name="Spawn another object" sid="869182874014126" type="PortalLeft">
+                    <param id="0" name="Object">FX_Portal_Lightning</param>
+                    <param id="1" name="Layer">4</param>
+                    <param id="2" name="Image point">choose(1,2,3,4)</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="639237999241217" type="PortalRight">
                     <param id="0" name="Object">FX_Portal_Lightning</param>
                     <param id="1" name="Layer">4</param>
                     <param id="2" name="Image point">choose(1,2,3,4)</param>

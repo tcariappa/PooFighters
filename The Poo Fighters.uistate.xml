@@ -10,9 +10,9 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
-        <layout order="0">Map</layout>
+        <layout active="1" order="0">Map</layout>
         <layout order="3">Controller Screen</layout>
-        <event-sheet active="1" order="1">MainGame</event-sheet>
+        <event-sheet order="1">MainGame</event-sheet>
         <event-sheet order="2">Functions</event-sheet>
         <event-sheet order="4">Controller Screen</event-sheet>
     </open-tabs>
