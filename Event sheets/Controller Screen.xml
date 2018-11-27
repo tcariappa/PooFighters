@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Controller Screen</name>
+    <events>
+        <event-block sid="416545066426379">
+            <conditions>
+                <condition id="8" name="On any button pressed" sid="454078977491769" type="Gamepad">
+                    <param id="0" name="Gamepad">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="525816088762397" type="Player1Ready">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="178514910951119">
+            <conditions>
+                <condition id="8" name="On any button pressed" sid="108305921150316" type="Gamepad">
+                    <param id="0" name="Gamepad">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="642663933137020" type="Player2Ready">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="958126918928903">
+            <conditions>
+                <condition id="-9" name="Is visible" sid="624088568957605" type="Player1Ready" />
+                <condition id="-9" name="Is visible" sid="805360186761616" type="Player2Ready" />
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="782162266218121" type="LoadingBar">
+                    <param id="0" name="Instance variable">Loading</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-14" name="Toggle boolean" sid="130579356423005" type="LoadingBar">
+                    <param id="0" name="Instance variable">Loading</param>
+                </action>
+                <action id="3" name="Set progress" sid="648797464878760" type="LoadingBar">
+                    <param id="0" name="Value">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="112878404472129" type="System">
+                    <param id="0" name="Seconds">1.0</param>
+                </action>
+                <action id="3" name="Set progress" sid="450391055693127" type="LoadingBar">
+                    <param id="0" name="Value">2</param>
+                </action>
+                <action id="-16" name="Wait" sid="481240538533927" type="System">
+                    <param id="0" name="Seconds">1.0</param>
+                </action>
+                <action id="3" name="Set progress" sid="266299162432581" type="LoadingBar">
+                    <param id="0" name="Value">3</param>
+                </action>
+                <action id="-16" name="Wait" sid="240306383401198" type="System">
+                    <param id="0" name="Seconds">0.5</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="684831786308969" type="System">
+                    <param id="0" name="Layout">Map</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

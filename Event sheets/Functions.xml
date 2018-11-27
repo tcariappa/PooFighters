@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Functions</name>
+    <events>
+        <event-block sid="590457256311165">
+            <conditions>
+                <condition id="0" name="On function" sid="926118863005775" type="Function">
+                    <param id="0" name="Name">&quot;PickShield1&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="579327375509832" type="Player1">
+                    <param id="0" name="Object">Player1Shield</param>
+                    <param id="1" name="Layer">4</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" sid="201719229126589" type="Player1Shield">
+                    <param id="0" name="Pin to">Player1</param>
+                    <param id="1" name="Mode">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="448774011748581">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="484299285267820" type="BulletPlayer2">
+                    <param id="0" name="Object">Player1Shield</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="247628683264671" type="Player1Shield" />
+                <action id="-9" name="Destroy" sid="164243585516580" type="BulletPlayer2" />
+            </actions>
+        </event-block>
+        <event-block sid="904904682243261">
+            <conditions>
+                <condition id="0" name="On function" sid="953999293108303" type="Function">
+                    <param id="0" name="Name">&quot;PickShield2&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="468335457965726" type="Player2">
+                    <param id="0" name="Object">Player2Shield</param>
+                    <param id="1" name="Layer">4</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" sid="837095070794435" type="Player2Shield">
+                    <param id="0" name="Pin to">Player2</param>
+                    <param id="1" name="Mode">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="241181267302517">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="578341419359152" type="BulletPlayer1">
+                    <param id="0" name="Object">Player2Shield</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="282918980942806" type="Player2Shield" />
+                <action id="-9" name="Destroy" sid="903497810251082" type="BulletPlayer1" />
+            </actions>
+        </event-block>
+        <event-block sid="502248490180960">
+            <conditions>
+                <condition id="0" name="On function" sid="225448235434195" type="Function">
+                    <param id="0" name="Name">&quot;PickGravity1&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="5" name="Set gravity" sid="167720992816177" type="Player2">
+                    <param id="0" name="Gravity">-2000</param>
+                </action>
+                <action id="-16" name="Wait" sid="651178693885980" type="System">
+                    <param id="0" name="Seconds">7</param>
+                </action>
+                <action behavior="Platform" id="5" name="Set gravity" sid="397286047490882" type="Player2">
+                    <param id="0" name="Gravity">2000</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="719611167622759">
+            <conditions>
+                <condition id="0" name="On function" sid="149734381957610" type="Function">
+                    <param id="0" name="Name">&quot;PickGravity2&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="5" name="Set gravity" sid="337353835905480" type="Player1">
+                    <param id="0" name="Gravity">-2000</param>
+                </action>
+                <action id="-16" name="Wait" sid="314361692097365" type="System">
+                    <param id="0" name="Seconds">7</param>
+                </action>
+                <action behavior="Platform" id="5" name="Set gravity" sid="662116597788184" type="Player1">
+                    <param id="0" name="Gravity">2000</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

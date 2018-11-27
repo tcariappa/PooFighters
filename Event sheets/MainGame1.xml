@@ -1,0 +1,594 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>MainGame</name>
+    <events>
+        <include>Functions</include>
+        <variable constant="0" name="ShootCooldown" sid="190878465721735" static="0" type="number">0</variable>
+        <variable constant="0" name="inCooldown" sid="545094078617057" static="0" type="number">0</variable>
+        <variable constant="0" name="ShootCooldown2" sid="372475783329903" static="0" type="number">0</variable>
+        <variable constant="0" name="inCooldown2" sid="385779689885533" static="0" type="number">0</variable>
+        <event-block sid="331617318436180">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="762888460421229" type="System" />
+            </conditions>
+            <actions>
+                <action id="-21" name="Reset global variables" sid="811649031057062" type="System" />
+            </actions>
+        </event-block>
+        <event-group description="" sid="904054359752934" title="MovementPlayer1">
+            <sub-events>
+                <event-block sid="738544059516328">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="196989220039167" type="Player1">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="Y co-ordinate">LayoutHeight</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-26" name="Restart layout" sid="240515979164238" type="System" />
+                    </actions>
+                </event-block>
+                <event-block sid="725073806406955">
+                    <conditions>
+                        <condition id="5" name="Compare axis" sid="533361878013132" type="Gamepad">
+                            <param id="0" name="Gamepad">0</param>
+                            <param id="1" name="Axis">0</param>
+                            <param id="2" name="Comparison">5</param>
+                            <param id="3" name="Value">50</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="602881463717137" type="Player1">
+                            <param id="0" name="Control">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="183550975054272">
+                    <conditions>
+                        <condition id="5" name="Compare axis" sid="577694740335551" type="Gamepad">
+                            <param id="0" name="Gamepad">0</param>
+                            <param id="1" name="Axis">0</param>
+                            <param id="2" name="Comparison">3</param>
+                            <param id="3" name="Value">-50</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="163720311677494" type="Player1">
+                            <param id="0" name="Control">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="256896900078837">
+                    <conditions>
+                        <condition id="3" name="Is button down" sid="725059547998137" type="Gamepad">
+                            <param id="0" name="Gamepad">0</param>
+                            <param id="1" name="Button">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="641764120521179" type="Player1">
+                            <param id="0" name="Control">2</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="179920878106162" type="Player1">
+                            <param id="0" name="Animation">&quot;Jump&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="749255467951066">
+                    <conditions>
+                        <condition id="5" name="Compare axis" sid="949221869599334" type="Gamepad">
+                            <param id="0" name="Gamepad">0</param>
+                            <param id="1" name="Axis">1</param>
+                            <param id="2" name="Comparison">4</param>
+                            <param id="3" name="Value">50</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="12" name="Fall through" sid="710995444300171" type="Player1" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="909606815997060" title="MovementPlayer2">
+            <sub-events>
+                <event-block sid="130997976802298">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="911305520305997" type="Player2">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="Y co-ordinate">LayoutHeight</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-26" name="Restart layout" sid="257553149359716" type="System" />
+                    </actions>
+                </event-block>
+                <event-block sid="157909194550722">
+                    <conditions>
+                        <condition id="5" name="Compare axis" sid="326713576559553" type="Gamepad">
+                            <param id="0" name="Gamepad">1</param>
+                            <param id="1" name="Axis">0</param>
+                            <param id="2" name="Comparison">5</param>
+                            <param id="3" name="Value">50</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="668967491735450" type="Player2">
+                            <param id="0" name="Control">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="367967211857729">
+                    <conditions>
+                        <condition id="5" name="Compare axis" sid="126627821631217" type="Gamepad">
+                            <param id="0" name="Gamepad">1</param>
+                            <param id="1" name="Axis">0</param>
+                            <param id="2" name="Comparison">3</param>
+                            <param id="3" name="Value">-50</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="834772188468901" type="Player2">
+                            <param id="0" name="Control">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="378280780315453">
+                    <conditions>
+                        <condition id="3" name="Is button down" sid="303636627345386" type="Gamepad">
+                            <param id="0" name="Gamepad">1</param>
+                            <param id="1" name="Button">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="191554768380122" type="Player2">
+                            <param id="0" name="Control">2</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="597740616036516" type="Player2">
+                            <param id="0" name="Animation">&quot;Jump&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="106674373582791">
+                    <conditions>
+                        <condition id="5" name="Compare axis" sid="764625244851527" type="Gamepad">
+                            <param id="0" name="Gamepad">1</param>
+                            <param id="1" name="Axis">1</param>
+                            <param id="2" name="Comparison">4</param>
+                            <param id="3" name="Value">50</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="12" name="Fall through" sid="710172363760956" type="Player2" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="993086666846443" title="ShootingPlayer1">
+            <sub-events>
+                <event-block sid="406077161747735">
+                    <conditions>
+                        <condition id="3" name="Is button down" sid="175914661401281" type="Gamepad">
+                            <param id="0" name="Gamepad">0</param>
+                            <param id="1" name="Button">7</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="631121306875239" type="System">
+                            <param id="0" name="Variable">ShootCooldown</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="805378982815644" type="Player1">
+                            <param id="0" name="Object">BulletPlayer1</param>
+                            <param id="1" name="Layer">4</param>
+                            <param id="2" name="Image point">1</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="580641894872192" type="Player1">
+                            <param id="0" name="Animation">&quot;Shoot&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="207044889832941" type="System">
+                            <param id="0" name="Variable">ShootCooldown</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="744402028238236" type="System">
+                            <param id="0" name="Variable">inCooldown</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="276870354426524">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="887842565379996" type="System">
+                            <param id="0" name="Variable">ShootCooldown</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="897618734138342" type="System">
+                            <param id="0" name="Variable">inCooldown</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="901529640245600" type="System">
+                            <param id="0" name="Variable">inCooldown</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="719107020952830" type="System">
+                            <param id="0" name="Seconds">0.60</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="674137096905531" type="System">
+                            <param id="0" name="Variable">ShootCooldown</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="161796434507918">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="395300932873113" type="BulletPlayer1">
+                            <param id="0" name="Object">Player2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Set group active" sid="178028721759234" type="System">
+                            <param id="0" name="Group name">&quot;ShootingPlayer2&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="679219774501296" type="Player2" />
+                        <action id="-13" name="Set time scale" sid="467657260239699" type="System">
+                            <param id="0" name="Time scale">0.2</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="372178043053605" type="Player1Wins">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="339643981210183" type="System">
+                            <param id="0" name="Seconds">0.6</param>
+                        </action>
+                        <action id="-26" name="Restart layout" sid="437783139362883" type="System" />
+                        <action id="-13" name="Set time scale" sid="738659088879447" type="System">
+                            <param id="0" name="Time scale">1.0</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="499865293357595" type="System">
+                            <param id="0" name="Group name">&quot;ShootingPlayer2&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="872641600976842" title="ShootingPlayer2">
+            <sub-events>
+                <event-block sid="169960935706710">
+                    <conditions>
+                        <condition id="3" name="Is button down" sid="140888695595956" type="Gamepad">
+                            <param id="0" name="Gamepad">1</param>
+                            <param id="1" name="Button">7</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="145618824432050" type="System">
+                            <param id="0" name="Variable">ShootCooldown2</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="182568680618205" type="Player2">
+                            <param id="0" name="Object">BulletPlayer2</param>
+                            <param id="1" name="Layer">4</param>
+                            <param id="2" name="Image point">1</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="810665645370942" type="Player2">
+                            <param id="0" name="Animation">&quot;Shoot&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="187523079841181" type="System">
+                            <param id="0" name="Variable">ShootCooldown2</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="109613476998960" type="System">
+                            <param id="0" name="Variable">inCooldown2</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="104090518931383">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="945345536866959" type="System">
+                            <param id="0" name="Variable">ShootCooldown2</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="971814505996431" type="System">
+                            <param id="0" name="Variable">inCooldown2</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="908371203423663" type="System">
+                            <param id="0" name="Variable">inCooldown2</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="381581953189318" type="System">
+                            <param id="0" name="Seconds">0.60</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="422460898326322" type="System">
+                            <param id="0" name="Variable">ShootCooldown2</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="458463915439040">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="436418670695996" type="BulletPlayer2">
+                            <param id="0" name="Object">Player1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Set group active" sid="170556338735552" type="System">
+                            <param id="0" name="Group name">&quot;ShootingPlayer1&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="273062494529472" type="Player1" />
+                        <action id="-13" name="Set time scale" sid="801653779472249" type="System">
+                            <param id="0" name="Time scale">0.2</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="774378869620830" type="Player2Wins">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="295800575577801" type="System">
+                            <param id="0" name="Seconds">0.6</param>
+                        </action>
+                        <action id="-26" name="Restart layout" sid="710986664477668" type="System" />
+                        <action id="-13" name="Set time scale" sid="191737837674881" type="System">
+                            <param id="0" name="Time scale">1.0</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="886766159834342" type="System">
+                            <param id="0" name="Group name">&quot;ShootingPlayer1&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="819721235567330" title="Teleportation">
+            <sub-events>
+                <event-block sid="636287949170332">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="114088083646811" type="BulletPlayer1">
+                            <param id="0" name="Object">PortalRight</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-1" name="Set X" sid="174070847543597" type="BulletPlayer1">
+                            <param id="0" name="X">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="956041026809428">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="566046086103718" type="BulletPlayer1">
+                            <param id="0" name="Object">MiddleWall</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="528888295787633" type="BulletPlayer1" />
+                    </actions>
+                </event-block>
+                <event-block sid="916167219136907">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="412090763914278" type="BulletPlayer2">
+                            <param id="0" name="Object">PortalLeft</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-1" name="Set X" sid="371738465314547" type="BulletPlayer2">
+                            <param id="0" name="X">1920</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="552622494745777">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="126072002215920" type="BulletPlayer2">
+                            <param id="0" name="Object">MiddleWall</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="546790682687958" type="BulletPlayer2" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="279726293959721" title="Pickups">
+            <sub-events>
+                <event-block sid="507626110806589">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="445420671578005" type="Player2">
+                            <param id="0" name="Object">Player2GPickup</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="727012241816635" type="Function">
+                            <param id="0" name="Name">&quot;PickGravity2&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="395387388365613" type="Player2GPickup" />
+                    </actions>
+                </event-block>
+                <event-block sid="780809267962971">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="120615658595510" type="Player1">
+                            <param id="0" name="Object">Player1GPickup</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="426420812087938" type="Function">
+                            <param id="0" name="Name">&quot;PickGravity1&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="746152243407571" type="Player1GPickup" />
+                    </actions>
+                </event-block>
+                <event-block sid="345503322094570">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="526380124611312" type="Player1">
+                            <param id="0" name="Object">Player1SPickup</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="175044732514968" type="Function">
+                            <param id="0" name="Name">&quot;PickShield1&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="456071110643855" type="Player1SPickup" />
+                    </actions>
+                </event-block>
+                <event-block sid="321666876798306">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="913259792622640" type="Player2">
+                            <param id="0" name="Object">Player2SPickup</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="168986839583766" type="Function">
+                            <param id="0" name="Name">&quot;PickShield2&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="456792524682518" type="Player2SPickup" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="105474304422630" title="Platforms">
+            <sub-events>
+                <event-block sid="975683218849877">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="252732469587661" type="BulletPlayer1">
+                            <param id="0" name="Object">GoThruPlatform</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="457930147996547" type="GoThruPlatform">
+                            <param id="0" name="Instance variable">IsDown</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="986592246958600" type="BulletPlayer1" />
+                        <action id="-13" name="Set boolean" sid="624768739936972" type="GoThruPlatform">
+                            <param id="0" name="Instance variable">IsHit</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="445958168917785" type="GoThruPlatform">
+                            <param id="0" name="Instance variable">IsDown</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="861523837703296" type="GoThruPlatform">
+                            <param id="0" name="Instance variable">RandomPos</param>
+                            <param id="1" name="Value">random(150,900)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="838026908500488">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="597356371836011" type="GoThruPlatform">
+                            <param id="0" name="Instance variable">IsHit</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" sid="143584087065124" type="GoThruPlatform">
+                            <param id="0" name="Instance variable">IsDown</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="313211891917874" type="GoThruPlatform">
+                            <param id="0" name="Animation">&quot;Destroy&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="722930351026637" type="System">
+                            <param id="0" name="Seconds">1.5</param>
+                        </action>
+                        <action id="-2" name="Set Y" sid="216870898956586" type="GoThruPlatform">
+                            <param id="0" name="Y">lerp(GoThruPlatform.Y,LayoutHeight,3*dt)</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="220792439128795" type="GoThruPlatform">
+                            <param id="0" name="Instance variable">IsHit</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="513387772329966">
+                    <conditions>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="694883178722982" type="GoThruPlatform">
+                            <param id="0" name="Instance variable">IsHit</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" sid="730700997447672" type="GoThruPlatform">
+                            <param id="0" name="Instance variable">IsDown</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="118567817981368" type="System">
+                            <param id="0" name="Seconds">4</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="156945225278913" type="GoThruPlatform">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-2" name="Set Y" sid="776455166512495" type="GoThruPlatform">
+                            <param id="0" name="Y">lerp(GoThruPlatform.Y,GoThruPlatform.RandomPos, 3*dt)</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="315192509352613" type="GoThruPlatform">
+                            <param id="0" name="Instance variable">IsDown</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="449903544192925">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="218246632812492" type="System">
+                    <param id="0" name="Interval (seconds)">1</param>
+                </condition>
+            </conditions>
+            <actions />
+        </event-block>
+        <event-block sid="604512447099837">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="935152203583922" type="System">
+                    <param id="0" name="Interval (seconds)">0.001</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-17" name="Move forward" sid="508706366240073" type="FX_Flush">
+                    <param id="0" name="Distance">3</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="659335239440855">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="701953545396929" type="System" />
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="657631365604456" type="FX_PE_Flush">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action behavior="ScrollTo" id="0" name="Shake" sid="704718313372067" type="Camera">
+                    <param id="0" name="Magnitude">2</param>
+                    <param id="1" name="Duration">2.5</param>
+                    <param id="2" name="Mode">0</param>
+                </action>
+                <action id="-16" name="Wait" sid="522159704212876" type="System">
+                    <param id="0" name="Seconds">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="598764593237865" type="FX_PE_Flush">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="178896672765088" type="System">
+                    <param id="0" name="Seconds">0.5</param>
+                </action>
+                <action id="0" name="Set spraying" sid="918767281497198" type="FX_PE_Flush">
+                    <param id="0" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
