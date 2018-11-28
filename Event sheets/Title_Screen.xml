@@ -24,7 +24,7 @@
                     <param id="1" name="Effect">&quot;Inverse&quot;</param>
                 </action>
                 <action id="-16" name="Wait" sid="148711253694562" type="System">
-                    <param id="0" name="Seconds">0.2</param>
+                    <param id="0" name="Seconds">0.1</param>
                 </action>
                 <action id="-28" name="Set effect parameter" sid="780757593181076" type="Logo">
                     <param id="0" name="Effect">&quot;AdjustHSL&quot;</param>
